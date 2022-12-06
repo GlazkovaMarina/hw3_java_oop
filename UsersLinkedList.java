@@ -55,6 +55,7 @@ public class UsersLinkedList implements Iterable<User>{
     public Iterator<User> iterator() {
         return new Iterator<User>() {
             private int index = 0;
+            private Node userCurrent = head;
             @Override
             public boolean hasNext() {
                 return index < countUsers;
@@ -62,7 +63,9 @@ public class UsersLinkedList implements Iterable<User>{
 
             @Override
             public User next() {
-                return get(index++);
+                userCurrent = userCurrent.getNext();
+                index++;
+                return userCurrent.getUser();
             }
             
         };

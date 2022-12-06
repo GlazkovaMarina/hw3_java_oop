@@ -15,6 +15,9 @@ public class Program {
         for (User user : users) {
             System.out.println(user);
         }
+        for (User user : users) {
+            System.out.println(user);
+        }
     }
 
 }
